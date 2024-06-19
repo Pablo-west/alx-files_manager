@@ -11,7 +11,7 @@ class RedisClient {
   }
 
   // check connection status and report
-  izLive() {
+  isAlive() {
     if (this.client.connected) {
       return true;
     }

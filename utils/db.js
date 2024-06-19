@@ -15,17 +15,17 @@ class DBClient {
     });
   }
 
-  izLive() {
+  isAlive() {
     return this.client.isConnected();
   }
 
-  async bbUsers() {
+  async nbUsers() {
     const users = this.db.collection('users');
     const usersNum = await users.countDocuments();
     return usersNum;
   }
 
-  async bbFiles() {
+  async nbFiles() {
     const files = this.db.collection('files');
     const filesNum = await files.countDocuments();
     return filesNum;

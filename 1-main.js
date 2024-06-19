@@ -9,7 +9,7 @@ const waitConnection = () => {
                 if (indexCount >= 10) {
                     reject()
                 }
-                else if(!dbClient.izLive()) {
+                else if(!dbClient.isAlive()) {
                     repeatFct()
                 }
                 else {
@@ -22,9 +22,9 @@ const waitConnection = () => {
 };
 
 (async () => {
-    console.log(dbClient.izLive());
+    console.log(dbClient.isAlive());
     await waitConnection();
-    console.log(dbClient.izLive());
-    console.log(await dbClient.bbUsers());
-    console.log(await dbClient.bbFiles());
+    console.log(dbClient.isAlive());
+    console.log(await dbClient.nbUsers());
+    console.log(await dbClient.nbFiles());
 })();
